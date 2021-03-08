@@ -134,16 +134,15 @@ public class MyController {
                 "      \"" + number + "\"\n" +
                 "   ],\n" +
                 "   \"sms\":{\n" +
-                "      \"sender\": \"TAXI\",\n" +
+                "      \"sender\": \"Dostavka24\",\n" +
                 "      \"text\":\"" + text + "\"\n" +
                 "   }\n" +
                 "}";
         HttpHeaders headers = new HttpHeaders();
         headers.setContentType(MediaType.APPLICATION_JSON);
-        headers.add("Authorization", "Basic " + "e736b42e815a8635ef3270b26f429cb69634d7c0");
+        headers.add("Authorization", "Basic " + "токен турбо смс");
         HttpEntity<String> entity = new HttpEntity<String>(json, headers);
         Status answer = restTemplate.postForObject(url, entity, Status.class);
-        System.out.println(json);
         return answer;
     }
 
